@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
-import Navbar from "@/widgets/layout/ui/navbar";
+import Navbar from "src/widgets/layout/navbar";
+import Footer from '@/widgets/layout/footer';
 
 interface IProps {
   children: React.ReactNode;
 }
 export const Layout: FC<IProps> = ({ children }) => {
   return (
-      <div>
+      <>
         <Navbar/>
-        <div >{children}</div>
-      </div>
+        {children}
+        <Footer/>
+      </>
   );
 };
