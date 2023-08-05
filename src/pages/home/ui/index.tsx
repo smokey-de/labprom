@@ -1,19 +1,19 @@
 import React from 'react';
 import style from './index.module.scss';
 import { Button, Image, Text, Title } from '@mantine/core';
-import ImageOne from "@/shared/images/image-gas.png"
-import ImageTwo from "@/shared/images/image-oil.png"
-import ImageThree from "@/shared/images/image-energe.png"
-import ImageFour from "@/shared/images/image-ecology.png"
+import ImageOne from '@/shared/images/image-gas.png';
+import ImageTwo from '@/shared/images/image-oil.png';
+import ImageThree from '@/shared/images/image-energe.png';
+import ImageFour from '@/shared/images/image-ecology.png';
 
 export const Home = () => {
   return (
     <>
       <div className={style.sectionWrapper}>
         <div className={style.titleWrapper}>
-          <Title order={1}>
+          <Text component={'p'}>
             Who We Are?
-          </Title>
+          </Text>
         </div>
 
         <div className={style.section}>
@@ -36,7 +36,7 @@ export const Home = () => {
                   <Text className={style.cardtext} component={'span'}>
                     Gas
                   </Text>
-                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageOne} alt={'ImageOne'}/>
+                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageOne} alt={'ImageOne'} />
                 </div>
                 <Button className={style.btn}>
                   Click me
@@ -47,7 +47,7 @@ export const Home = () => {
                   <Text className={style.cardtext} component={'span'}>
                     oil
                   </Text>
-                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageTwo} alt={'ImageTwo'}/>
+                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageTwo} alt={'ImageTwo'} />
                 </div>
                 <Button className={style.btn}>
                   Click me
@@ -59,7 +59,7 @@ export const Home = () => {
 
                     ENERGY
                   </Text>
-                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageThree} alt={'ImageThree'}/>
+                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageThree} alt={'ImageThree'} />
                 </div>
                 <Button className={style.btn}>
                   Click me
@@ -70,7 +70,7 @@ export const Home = () => {
                   <Text className={style.cardtext} component={'span'}>
                     ECOLOGY
                   </Text>
-                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageFour} alt={'ImageFour'}/>
+                  <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageFour} alt={'ImageFour'} />
                 </div>
                 <Button className={style.btn}>
                   Click me

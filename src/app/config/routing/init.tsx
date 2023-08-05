@@ -8,6 +8,8 @@ import {ChildrenProp} from '@/shared/types/utility';
 import {PrivateRoute} from './private-route';
 
 const Home = lazy(() => import('@/pages/home'));
+const Contact = lazy(() => import('@/pages/contact'));
+const About = lazy(() => import('@/pages/about'));
 
 interface RouteView {
   element: JSX.Element;
@@ -22,6 +24,14 @@ const routesView: RouteView[] = [
       {
         path: routePaths.root,
         element: <Home />,
+      },
+      {
+        path: routePaths.about,
+        element: <About />,
+      },
+      {
+        path: routePaths.contact,
+        element: <Contact />,
       },
     ],
   },

@@ -1,0 +1,39 @@
+.sectionWrapper {
+  width: 100%;
+
+  .titleWrapper {
+    width: 100%;
+    background: #000000;
+    padding: 80px;
+
+    p {
+      width: 100%;
+      font-size: 84px;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.0415625em;
+    }
+  }
+
+  .section {
+    padding: 80px;
+    background: #dd9933;
+    height: 100%;
+
+    .container {
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+
+      .sectionTextOne {
+        max-width: 41rem;
+        width: 100%;
+        margin: 0 auto;
+        font-family: "Times New Roman", sans-serif !important;
+        font-size: 24px;
+      }
+
+    }
+  }
+}
