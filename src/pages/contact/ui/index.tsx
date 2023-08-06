@@ -2,12 +2,14 @@ import React from 'react';
 import style from './index.module.scss';
 import { Box, Button, Center, Flex, Text, Textarea, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useMediaQuery } from '@mantine/hooks';
 
 const bot = {
   token: '6467635323:AAGtvPazdj4zkpFq96D9wqCQFUVa-iKe5gA',
   chatId: '1452109307',
 };
 export const Contact = () => {
+  const matches = useMediaQuery('(max-width: 500px)');
   const form = useForm({
     initialValues: {
       email: '',
@@ -55,7 +57,7 @@ export const Contact = () => {
                     }
                   });
                 })}>
-                  <Flex w={'100%'} columnGap={20}>
+                  <Flex wrap={matches ? 'wrap' : 'nowrap'} w={'100%'} columnGap={20}>
                     <TextInput
                       className={style.input}
                       label='Email'
