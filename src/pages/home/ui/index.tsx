@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './index.module.scss';
-import { Button, Image, Text, Title } from '@mantine/core';
+import { Button, Image, Text } from '@mantine/core';
 import ImageOne from '@/shared/images/image-gas.png';
 import ImageTwo from '@/shared/images/image-oil.png';
 import ImageThree from '@/shared/images/image-energe.png';

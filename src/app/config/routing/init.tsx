@@ -10,6 +10,7 @@ import {PrivateRoute} from './private-route';
 const Home = lazy(() => import('@/pages/home'));
 const Contact = lazy(() => import('@/pages/contact'));
 const About = lazy(() => import('@/pages/about'));
+const Ecology = lazy(() => import('@/pages/sub-page'));
 
 interface RouteView {
   element: JSX.Element;
@@ -32,6 +33,10 @@ const routesView: RouteView[] = [
       {
         path: routePaths.contact,
         element: <Contact />,
+      },
+      {
+        path: routePaths.ecology,
+        element: <Ecology />,
       },
     ],
   },
