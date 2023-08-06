@@ -5,8 +5,10 @@ import ImageOne from '@/shared/images/image-gas.png';
 import ImageTwo from '@/shared/images/image-oil.png';
 import ImageThree from '@/shared/images/image-energe.png';
 import ImageFour from '@/shared/images/image-ecology.png';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className={style.sectionWrapper}>
@@ -72,7 +74,9 @@ export const Home = () => {
                   </Text>
                   <Image fit={'cover'} height={'430px'} width={'100%'} src={ImageFour} alt={'ImageFour'} />
                 </div>
-                <Button className={style.btn}>
+                <Button className={style.btn} onClick={() => {
+                  navigate('/ecology')
+                }}>
                   Click me
                 </Button>
               </div>
