@@ -37,3 +37,58 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 780px) {
+  .sectionWrapper {
+
+    .titleWrapper {
+      padding: 40px;
+
+      p {
+        font-size: 64px;
+      }
+    }
+
+    .section {
+      padding: 50px 40px;
+
+      .container {
+        max-width: 100%;
+
+        .sectionTextOne {
+          max-width: 100%;
+          font-size: 18px;
+        }
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .sectionWrapper {
+
+    .titleWrapper {
+      padding: 40px;
+
+      p {
+        font-size: 34px;
+      }
+    }
+
+    .section {
+      padding: 50px 40px;
+
+      .container {
+        max-width: 100%;
+
+        .sectionTextOne {
+          max-width: 100%;
+          font-size: 18px;
+        }
+
+      }
+    }
+  }
+}

@@ -2,6 +2,33 @@
   padding: 28px 40px;
   background: #000000;
   color: #fff;
+  position: relative;
+
+  .searchWrapper {
+    width: 100%;
+    padding: 0 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    height: 146px;
+    background: #000000;
+    z-index: 1;
+    border-bottom: 1px solid #262626;
+    overflow: hidden;
+
+    .input {
+      input {
+        height: 146px;
+        border-radius: 0;
+        border: none;
+        background: #000000;
+        letter-spacing: -0.0277em;
+        font-size: 46px;
+        color: #ffffff;
+      }
+    }
+  }
 
   .navbar {
     max-width: 1680px;
@@ -61,35 +88,40 @@
   }
 }
 
-.drawerBody{
+.drawerBody {
   background: #000000;
   position: relative;
-  .menu{
-    .link{
+
+  .menu {
+    .link {
       text-decoration: none;
-      p{
+
+      p {
         color: #907112;
         padding: 25px 0;
         font-size: 24px;
         font-weight: 700;
         letter-spacing: -0.0375em;
-        border-top: 1px solid #262626 ;
+        border-top: 1px solid #262626;
       }
-      &.active{
-        p{
+
+      &.active {
+        p {
           text-decoration: underline;
         }
       }
     }
   }
-  .drawerBottom{
+
+  .drawerBottom {
     position: absolute;
     left: 40px;
     bottom: 60px;
 
     column-gap: 8px;
-    a{
-      .icon{
+
+    a {
+      .icon {
         border-radius: 100%;
         width: 44px;
         height: 44px;
@@ -98,9 +130,86 @@
         align-items: center;
         justify-content: center;
         transition: .1s ease-in-out;
-        &:hover{
+
+        &:hover {
           transition: .2s ease-in-out;
           transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbarWrapper {
+    .navbar {
+      max-width: 100%;
+
+      .navbarLeft {
+        row-gap: 12px;
+        align-items: flex-start;
+        flex-direction: column;
+
+        p {
+          text-align: left;
+        }
+      }
+
+
+      .navbarRightItem {
+        max-width: 100%;
+
+        svg {
+          path {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .navbarWrapper {
+    .navbar {
+      .navbarLeft {
+        row-gap: 18px;
+        align-items: center;
+
+        p {
+          text-align: center;
+        }
+      }
+
+      .navbarRightItem {
+        max-width: 100%;
+
+        svg {
+          path {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .navbarWrapper {
+    .navbar {
+      .navbarLeft {
+        p {
+          display: none;
+        }
+      }
+
+      .navbarRightItem {
+        max-width: 100%;
+
+        svg {
+          path {
+            fill: #ffffff;
+          }
         }
       }
     }

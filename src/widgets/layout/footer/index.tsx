@@ -6,10 +6,11 @@ import { ReactComponent as IconTwo } from '@/shared/images/icon-facebook.svg';
 import { ReactComponent as IconThree } from '@/shared/images/icon-twitter.svg';
 import { ReactComponent as IconFour } from '@/shared/images/icon-instagram.svg';
 import { ReactComponent as IconFive } from '@/shared/images/icon-mail.svg';
-import { useWindowScroll } from '@mantine/hooks';
+import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
 
 const Footer: FC = () => {
   const [scroll, scrollTo] = useWindowScroll();
+  const matches = useMediaQuery('(max-width: 780px)');
   return (
     <>
       <div className={style.footerWrapper}>
@@ -53,7 +54,8 @@ const Footer: FC = () => {
             <Text component={'p'}>
               © 2023 <Anchor>LABPROM-IMPORT</Anchor> <Anchor>Powered by Prosodos</Anchor>
             </Text>
-            <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> To the top ↑</Button>
+            {!matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> To the top ↑</Button>}
+            {matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> Up ↑</Button>}
           </div>
         </div>
       </div>
