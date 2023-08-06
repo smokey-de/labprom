@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './index.module.scss';
-import styles from '@/widgets/layout/footer/index.module.scss';
-import { Box, Button, Text, Textarea, TextInput, Title } from '@mantine/core';
+import { Box, Button, Center, Flex, Text, Textarea, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
+
 const bot = {
   token: '6467635323:AAGtvPazdj4zkpFq96D9wqCQFUVa-iKe5gA',
-  chatId: '1452109307'
-}
+  chatId: '1452109307',
+};
 export const Contact = () => {
   const form = useForm({
     initialValues: {
@@ -34,64 +34,53 @@ export const Contact = () => {
           <div className={style.container}>
             <Text component={'p'} className={style.sectionTextOne}>
               This is a page with some basic contact information, such as an address and phone number. You might also
-              try a plugin to add a contact form.
+              try a plugin to add a contact form
             </Text>
-            <div className={styles.footerCenter}>
-              <Box  maw={500} mx="auto" mt={20} style={{
-                rowGap: "20px",
-              }}>
+
+            <Center w={'100%'} mt={40}>
+              <Box className={style.form}>
                 <form onSubmit={form.onSubmit((values) => {
                   fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatId}&text=${
                     'Email: ' + values.email + '\n ' +
                     'Number: ' + values.number + '\n ' +
                     'Message: ' + values.message
-                  }`,{
+                  }`, {
                     method: 'GET',
                   }).then((res) => {
-                    if (res.status === 200){
-                      alert('Message sent successfully')
-                      form.reset()
-                    }else {
-                      alert('Error')
+                    if (res.status === 200) {
+                      alert('Message sent successfully');
+                      form.reset();
+                    } else {
+                      alert('Error');
                     }
-                  })
+                  });
                 })}>
-                  <TextInput
-                    classNames={{
-                      required: styles.none
-                    }}
-                    className={styles.input}
-                    withAsterisk
-                    label="Email"
-                    placeholder="your@email.com"
-                    {...form.getInputProps('email')}
-                  />
-                  <TextInput
-                    classNames={{
-                      required: styles.none
-                    }}
-                    className={styles.input}
-                    withAsterisk
-                    label="Phone number"
-                    placeholder="Phone number"
-                    {...form.getInputProps('number')}
-                  />
+                  <Flex w={'100%'} columnGap={20}>
+                    <TextInput
+                      className={style.input}
+                      label='Email'
+                      placeholder='your@email.com'
+                      {...form.getInputProps('email')}
+                    />
+                    <TextInput
+                      className={style.input}
+                      label='Phone number'
+                      placeholder='Phone number'
+                      {...form.getInputProps('number')}
+                    />
+                  </Flex>
                   <Textarea
-                    classNames={{
-                      required: styles.none
-                    }}
-                    className={styles.input}
-                    placeholder="Your comment"
-                    label="Your comment"
-                    withAsterisk
+                    className={style.input}
+                    placeholder='Your comment'
+                    label='Your comment'
                     {...form.getInputProps('message')}
                   />
-                  <Button type="submit" className={styles.formBtn}>
+                  <Button type='submit' className={style.formBtn}>
                     Send
                   </Button>
                 </form>
               </Box>
-            </div>
+            </Center>
 
           </div>
         </div>

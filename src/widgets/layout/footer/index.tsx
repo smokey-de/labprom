@@ -12,7 +12,7 @@ import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
 const Footer: FC = () => {
 
   const [scroll, scrollTo] = useWindowScroll();
-  const matches = useMediaQuery('(max-width: 780px)');
+  const matches = useMediaQuery('(max-width: 820px)');
 
 
   return (

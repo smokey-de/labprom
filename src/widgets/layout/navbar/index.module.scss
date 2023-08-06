@@ -169,7 +169,7 @@
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 820px) {
   .navbarWrapper {
     .navbar {
       .navbarLeft {
@@ -196,6 +196,19 @@
 
 @media only screen and (max-width: 680px) {
   .navbarWrapper {
+    .searchWrapper {
+      padding: 0 40px;
+      height: 100px;
+
+      .input {
+        input {
+          height: 100px;
+          letter-spacing: -0.0277em;
+          font-size: 24px;
+          color: #ffffff;
+        }
+      }
+    }
     .navbar {
       .navbarLeft {
         p {

@@ -5,8 +5,11 @@ import ImageOne from '@/shared/images/image-eco.png';
 import ImageTwo from '@/shared/images/image-monitoring.png';
 import ImageThree from '@/shared/images/image-emission.png';
 import ImageFour from '@/shared/images/image-ambient.png';
+import { useMediaQuery } from '@mantine/hooks';
+
 
 export const Ecology = () => {
+  const matches = useMediaQuery('(max-width: 680px)');
   return (
     <>
       <div className={style.sectionWrapper}>
@@ -19,7 +22,7 @@ export const Ecology = () => {
         <div className={style.section}>
           <div className={style.container}>
             <div className={style.imageWrapper}>
-              <Image fit={'cover'} src={ImageOne} width={'100%'} height={'100%'} />
+              <Image fit={'cover'} src={ImageOne} width={'100%'} height={ matches ? '500px' : '100%'} />
               <div className={style.textWrapper}>
                 <Text component={'p'}>
                   CONTROL AND COMPLIANCE MONITORING
@@ -41,7 +44,7 @@ export const Ecology = () => {
             <div className={style.cards}>
 
               <div className={style.card}>
-                <Image fit={'cover'} height={'238px'} width={'100%'} src={ImageTwo} alt={'ImageOne'} />
+                <Image fit={'cover'} width={'100%'} src={ImageTwo} alt={'ImageOne'} />
                 <Text component={'p'}>
                   MONITORING
                 </Text>
@@ -57,7 +60,7 @@ export const Ecology = () => {
                 </Button>
               </div>
               <div className={style.card}>
-                <Image fit={'cover'} height={'238px'} width={'100%'} src={ImageThree} alt={'ImageOne'} />
+                <Image fit={'cover'} width={'100%'} src={ImageThree} alt={'ImageOne'} />
                 <Text component={'p'}>
                   EMISSION
                 </Text>
@@ -73,7 +76,7 @@ export const Ecology = () => {
                 </Button>
               </div>
               <div className={style.card}>
-                <Image fit={'cover'} height={'238px'} width={'100%'} src={ImageTwo} alt={'ImageOne'} />
+                <Image fit={'cover'} width={'100%'} src={ImageFour} alt={'ImageOne'} />
                 <Text component={'p'}>
                   ENVIRONMENT
                 </Text>

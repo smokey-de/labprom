@@ -20,7 +20,7 @@ const Navbar: FC = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const matches = useMediaQuery('(max-width: 780px)');
+  const matches = useMediaQuery('(max-width: 820px)');
   return (
     <>
       <div className={style.navbarWrapper}>
