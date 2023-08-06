@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import style from './index.module.scss';
-import { ActionIcon, Anchor, Drawer, Flex, Image, Input, ScrollArea, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Anchor, Drawer, Flex, Image, Input, Text, Tooltip } from '@mantine/core';
 import Logo from '@/shared/images/logo.png';
 import { ReactComponent as IconSearch } from '@/shared/images/search-icon.svg';
 import { ReactComponent as IconDots } from '@/shared/images/icon-dots.svg';
