@@ -59,8 +59,10 @@ const Footer: FC = () => {
             <Text component={'p'}>
               © 2023 <Anchor>LABPROM-IMPORT</Anchor> <Anchor>Powered by Prosodos</Anchor>
             </Text>
-            {!matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> To the top ↑</Button>}
-            {matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> Up ↑</Button>}
+            {scroll.y > 0 && <>
+              {!matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> To the top ↑</Button>}
+              {matches && <Button className={style.btn} onClick={() => scrollTo({ y: 0 })}> Up ↑</Button>}
+            </>}
           </div>
         </div>
       </div>
