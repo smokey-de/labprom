@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import style from './index.module.scss';
-import { Anchor, Button, Text, Title, Box, TextInput, Textarea } from '@mantine/core';
+import { Anchor, Button, Text, Title } from '@mantine/core';
 import { ReactComponent as IconOne } from '@/shared/images/icon-yelp.svg';
 import { ReactComponent as IconTwo } from '@/shared/images/icon-facebook.svg';
 import { ReactComponent as IconThree } from '@/shared/images/icon-twitter.svg';
