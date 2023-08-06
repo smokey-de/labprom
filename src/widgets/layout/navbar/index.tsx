@@ -13,12 +13,13 @@ import { ReactComponent as IconFour } from '@/shared/images/icon-instagram.svg';
 import { ReactComponent as IconFive } from '@/shared/images/icon-mail.svg';
 import cl from 'classnames';
 import { dataMenu } from '@/widgets/layout/navbar/libs';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: FC = () => {
   const [search, setSearch] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const matches = useMediaQuery('(max-width: 780px)');
   return (
     <>
@@ -46,7 +47,7 @@ const Navbar: FC = () => {
           </div>
           {!matches && <div className={style.navbarRight}>
             <div className={style.navbarRightItem}>
-              <Anchor className={style.link}>
+              <Anchor className={style.link} component={Link} to={'/'} >
                 Home
               </Anchor>
             </div>
@@ -95,22 +96,23 @@ const Navbar: FC = () => {
         </div>
 
         <Flex className={style.drawerBottom}>
-          <Anchor>
+          <Anchor href='https://www.yelp.com/'>
             <div className={style.icon}>
               <IconOne />
             </div>
+
           </Anchor>
-          <Anchor>
+          <Anchor href={'https://www.facebook.com/WordPress/'}>
             <div className={style.icon}>
               <IconTwo />
             </div>
           </Anchor>
-          <Anchor>
+          <Anchor href={'https://twitter.com/wordpress'}>
             <div className={style.icon}>
               <IconThree />
             </div>
           </Anchor>
-          <Anchor>
+          <Anchor href={'https://www.instagram.com/explore/tags/wordcamp/'}>
             <div className={style.icon}>
               <IconFour />
             </div>
