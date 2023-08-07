@@ -13,22 +13,32 @@ import { ReactComponent as IconFour } from '@/shared/images/icon-instagram.svg';
 import { ReactComponent as IconFive } from '@/shared/images/icon-mail.svg';
 import cl from 'classnames';
 import { dataMenu } from '@/widgets/layout/navbar/libs';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: FC = () => {
   const [search, setSearch] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
+  const [searchValue, setSearchValue] = React.useState('');
+
   const location = useLocation();
+  const navigate = useNavigate();
   const matches = useMediaQuery('(max-width: 820px)');
   return (
     <>
       <div className={style.navbarWrapper}>
         {search && <div className={style.searchWrapper}>
-          <Input placeholder={'Search...'} className={style.input} rightSection={
-            <ActionIcon  onClick={() => setSearch(false)} variant={'transparent'}>
-              <IconClose />
-            </ActionIcon>
-          } />
+          <Input placeholder={'Search...'} className={style.input}
+                 onKeyPress={(event) => {
+                   if (event.key === 'Enter') {
+                     setSearch(false)
+                      navigate(`/search-results?q=${(event.target as any).value}`);
+                   }
+                 }}
+                 rightSection={
+                   <ActionIcon onClick={() => setSearch(false)} variant={'transparent'}>
+                     <IconClose />
+                   </ActionIcon>
+                 } />
         </div>}
         <div className={style.navbar}>
           {matches && <div className={cl(style.navbarRightItem)}>
@@ -39,14 +49,18 @@ const Navbar: FC = () => {
             </Tooltip>
           </div>}
           <div className={style.navbarLeft}>
-            <Image src={Logo} alt={'logo'} width={matches ? 80 : 120} />
+            <Image src={Logo} alt={'logo'} width={matches ? 80 : 120} style={{
+              cursor: 'pointer',
+            }} onClick={() => {
+              navigate('/');
+            }} />
             <Text component={'p'}>
               We protect the environment and create peace by investing in equipment.
             </Text>
           </div>
           {!matches && <div className={style.navbarRight}>
             <div className={style.navbarRightItem}>
-              <Anchor className={style.link} component={Link} to={'/'} >
+              <Anchor className={style.link} component={Link} to={'/'}>
                 Home
               </Anchor>
             </div>
