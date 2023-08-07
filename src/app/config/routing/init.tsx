@@ -11,6 +11,7 @@ const Home = lazy(() => import('@/pages/home'));
 const Contact = lazy(() => import('@/pages/contact'));
 const About = lazy(() => import('@/pages/about'));
 const Ecology = lazy(() => import('@/pages/sub-page'));
+const SearchResults = lazy(() => import('@/pages/search-results'));
 
 interface RouteView {
   element: JSX.Element;
@@ -37,6 +38,10 @@ const routesView: RouteView[] = [
       {
         path: routePaths.ecology,
         element: <Ecology />,
+      },
+      {
+        path: routePaths.searchResults,
+        element: <SearchResults />,
       },
     ],
   },
