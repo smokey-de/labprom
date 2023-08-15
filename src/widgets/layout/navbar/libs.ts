@@ -8,6 +8,10 @@ export const dataMenu = [
     path: '/about'
   },
   {
+    label: 'Products',
+    path: '/products'
+  },
+  {
     label: 'Contact',
     path: '/contact'
   },
