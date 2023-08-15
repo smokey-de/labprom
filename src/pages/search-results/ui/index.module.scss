@@ -83,6 +83,31 @@
   }
 }
 
+.noResults{
+  display: flex;
+  gap: 8px;
+  .searchInput{
+    input{
+      height: 58px;
+      width: 450px;
+      &:focus{
+        border-color: #dd9933;
+      }
+    }
+  }
+  .searchBtn{
+    background-color: #473700;
+    color: #dd9933;
+    border-radius: 0 !important;
+    padding: 19px 25px;
+    height: 60px;
+    &:hover{
+      background-color: #473700;
+      color: #dd9933;
+    }
+  }
+}
+
 @media only screen and (max-width: 680px) {
   .sectionWrapper {
 

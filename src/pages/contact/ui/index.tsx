@@ -5,8 +5,8 @@ import { useForm } from '@mantine/form';
 import { useMediaQuery } from '@mantine/hooks';
 
 const bot = {
-  token: '6467635323:AAGtvPazdj4zkpFq96D9wqCQFUVa-iKe5gA',
-  chatId: '1452109307',
+  token: '6634623219:AAGHL47GZ-IMt9fHNGG2WVFDGCmIebMetRk',
+  chatId: '117817602',
 };
 export const Contact = () => {
   const matches = useMediaQuery('(max-width: 500px)');
@@ -42,11 +42,10 @@ export const Contact = () => {
             <Center w={'100%'} mt={40}>
               <Box className={style.form}>
                 <form onSubmit={form.onSubmit((values) => {
-                  fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatId}&text=${
-                    'Email: ' + values.email + '\n ' +
-                    'Number: ' + values.number + '\n ' +
-                    'Message: ' + values.message
-                  }`, {
+                  const message = '<b>Email</b>: ' + values.email + "%0A" +
+                    `<b>Number</b>: ${values.number}` + "%0A" +
+                    `<b>Message</b>: ${values.message}`;
+                  fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatId}&text=${message}&parse_mode=HTML`, {
                     method: 'GET',
                   }).then((res) => {
                     if (res.status === 200) {
