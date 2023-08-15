@@ -14,6 +14,7 @@ const Products = lazy(() => import('@/pages/products'));
 const ProductFilter = lazy(() => import('@/pages/product-filter'));
 const ProductFilterInfo = lazy(() => import('@/pages/product-filter-info'));
 const Ecology = lazy(() => import('@/pages/sub-page'));
+const SearchResults = lazy(() => import('@/pages/search-results'));
 
 interface RouteView {
   element: JSX.Element;
@@ -52,6 +53,10 @@ const routesView: RouteView[] = [
       {
         path: routePaths.ecology,
         element: <Ecology />,
+      },
+      {
+        path: routePaths.searchResults,
+        element: <SearchResults />,
       },
     ],
   },

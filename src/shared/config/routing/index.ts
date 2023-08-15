@@ -6,5 +6,6 @@ export enum routePaths {
   productsFilter = 'products-filter',
   productFilterInfo = 'product-filter-info',
   ecology = 'ecology',
+  searchResults = 'search-results',
   notFound = '*',
 }
