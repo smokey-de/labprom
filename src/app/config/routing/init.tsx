@@ -10,6 +10,9 @@ import {PrivateRoute} from './private-route';
 const Home = lazy(() => import('@/pages/home'));
 const Contact = lazy(() => import('@/pages/contact'));
 const About = lazy(() => import('@/pages/about'));
+const Products = lazy(() => import('@/pages/products'));
+const ProductFilter = lazy(() => import('@/pages/product-filter'));
+const ProductFilterInfo = lazy(() => import('@/pages/product-filter-info'));
 const Ecology = lazy(() => import('@/pages/sub-page'));
 const SearchResults = lazy(() => import('@/pages/search-results'));
 
@@ -30,6 +33,18 @@ const routesView: RouteView[] = [
       {
         path: routePaths.about,
         element: <About />,
+      },
+      {
+        path: routePaths.products,
+        element: <Products />,
+      },
+      {
+        path: routePaths.productsFilter,
+        element: <ProductFilter />,
+      },
+      {
+        path: routePaths.productFilterInfo  ,
+        element: <ProductFilterInfo />,
       },
       {
         path: routePaths.contact,
