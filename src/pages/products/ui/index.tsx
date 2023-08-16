@@ -2,6 +2,10 @@ import React from 'react';
 import style from './index.module.scss';
 import { Button, Image, Text } from '@mantine/core';
 import ImageOne from '@/shared/images/Image-product.png';
+import ImageTwo from '@/shared/images/image-product-two.png';
+import ImageThree from '@/shared/images/image-product-three.png';
+import ImageFour from '@/shared/images/image-product-four.png';
+import ImageFive from '@/shared/images/image-product-five.png';
 import { useNavigate } from 'react-router-dom';
 
 export const Products = () => {
@@ -28,7 +32,7 @@ export const Products = () => {
                 </Button>
               </div>
               <div onClick={() => navigate('/products-filter')} className={style.card}>
-                <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
+                <Image src={ImageTwo} alt={'image product'} radius={0} width={'100%'} />
                 <Text className={style.title} component={'p'}>
                   PRODUCT PORTFOLIO
                 </Text>
@@ -37,7 +41,7 @@ export const Products = () => {
                 </Button>
               </div>
               <div onClick={() => navigate('/products-filter')} className={style.card}>
-                <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
+                <Image src={ImageThree} alt={'image product'} radius={0} width={'100%'} />
                 <Text className={style.title} component={'p'}>
                   Process and environmental monitoring
                 </Text>
@@ -46,7 +50,7 @@ export const Products = () => {
                 </Button>
               </div>
               <div onClick={() => navigate('/products-filter')} className={style.card}>
-                <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
+                <Image src={ImageFour} alt={'image product'} radius={0} width={'100%'} />
                 <Text className={style.title} component={'p'}>
                   Combustion and safety monitoring
                 </Text>
@@ -55,7 +59,7 @@ export const Products = () => {
                 </Button>
               </div>
               <div onClick={() => navigate('/products-filter')} className={style.card}>
-                <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
+                <Image src={ImageFive} alt={'image product'} radius={0} width={'100%'} />
                 <Text className={style.title} component={'p'}>
                   Tunnel and traffic monitoring
                 </Text>

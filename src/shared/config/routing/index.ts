@@ -4,7 +4,7 @@ export enum routePaths {
   about = 'about',
   products = 'products',
   productsFilter = 'products-filter',
-  productFilterInfo = 'product-filter-info',
+  productFilterInfo = 'product-filter-info/:id',
   ecology = 'ecology',
   searchResults = 'search-results',
   notFound = '*',
