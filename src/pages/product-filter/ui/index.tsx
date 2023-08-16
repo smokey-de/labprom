@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './index.module.scss';
 import {  Box, Button, Center, Flex, Image, Pagination, Select, Text } from '@mantine/core';
-import ImageOne from '@/shared/images/Image-product-filter.png';
 import { ReactComponent as IconArrow } from '@/shared/images/icon-arrow.svg';
 import { ReactComponent as IconRefresh } from '@/shared/images/icon-refresh.svg';
 import cl from 'classnames';
 import { useMediaQuery } from '@mantine/hooks';
-
+import { useNavigate } from 'react-router-dom';
+import {data} from './libs'
 export const ProductFilter = () => {
+  const navigate = useNavigate()
   const matches = useMediaQuery('(max-width: 680px)');
+
+  const handleCard = (item:any) => {
+    navigate('/product-filter-info/' + item.id);
+    localStorage.setItem('data', JSON.stringify(item));
+  }
+
   return (
     <>
       <div className={style.sectionWrapper}>
@@ -115,84 +122,31 @@ export const ProductFilter = () => {
           <div className={style.container}>
 
             <div className={style.cards}>
-              <div className={cl(style.card, style.new)}>
-                <Box>
-                  <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
+              {data?.map((i)=>(
+                <div key={i?.id} onClick={() => handleCard(i)} className={cl(style.card, [i.new && style.new])}>
+                  <Box>
+                    <Image src={i.image} alt={'image product'} radius={0} width={'100%'} />
 
-                  <div className={style.topTexts}>
-                    <Text className={style.title} component={'p'}>
-                      D-R 909
+                    <div className={style.topTexts}>
+                      <Text className={style.title} component={'p'}>
+                        {i.title}
+                      </Text>
+                      <Text className={style.subTitle} component={'p'}>
+                        {i.subTitle}
+                      </Text>
+                    </div>
+                    <Text className={style.description}>
+                      {i.description}
+
+                      <div className={style.line} />
                     </Text>
-                    <Text className={style.subTitle} component={'p'}>
-                      Extractive dust monitor
-                    </Text>
-                  </div>
-                  <Text className={style.description}>
-                    Extractive continuous dust measurement of small
-                    to medium dust concentrations in wet flue and
-                    process gases even under difficult plant conditions.
+                  </Box>
 
-                    <div className={style.line} />
-                  </Text>
-                </Box>
-
-                <Button className={style.moreBtn}>
-                  more
-                </Button>
-              </div>
-              <div className={style.card}>
-                <Box>
-                  <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
-
-                  <div className={style.topTexts}>
-                    <Text className={style.title} component={'p'}>
-                      EDM 280
-                    </Text>
-                    <Text className={style.subTitle} component={'p'}>
-                      Environmental dust monitor for PM monitoring in
-                      ambient air
-                    </Text>
-                  </div>
-                  <Text className={style.description}>
-                    Latest generation optical aerosol spectrometer
-                    with unique detection limit and excellent counting
-                    efficiency. Suitable for real-time PM monitoring
-                    under any environmental conditions and at all
-                    sites.
-                    <div className={style.line} />
-                  </Text>
-                </Box>
-
-                <Button className={style.moreBtn}>
-                  more
-                </Button>
-              </div>
-              <div className={style.card}>
-                <Box>
-                  <Image src={ImageOne} alt={'image product'} radius={0} width={'100%'} />
-
-                  <div className={style.topTexts}>
-                    <Text className={style.title} component={'p'}>
-                      GRIMM 5420
-                    </Text>
-                    <Text className={style.subTitle} component={'p'}>
-                      19` rack mounted high-end condensation particle
-                      counter
-                    </Text>
-                  </div>
-                  <Text className={style.description}>
-                    For continuous nanoparticle counting. Operation
-                    as fully equipped SMPS+C system optional thanks
-                    to scanning mobility particle sizer capability.
-
-                    <div className={style.line} />
-                  </Text>
-                </Box>
-
-                <Button className={style.moreBtn}>
-                  more
-                </Button>
-              </div>
+                  <Button className={style.moreBtn}>
+                    more
+                  </Button>
+                </div>
+              ))}
             </div>
 
             <Center mt={40}>
