@@ -4,7 +4,7 @@
   .titleWrapper {
     width: 100%;
     background: #000000;
-    padding: 80px;
+    padding: 40px;
 
     p {
       width: 100%;
@@ -66,12 +66,59 @@
 
 @media only screen and (max-width: 820px) {
   .sectionWrapper {
-    width: 100%;
+    .titleWrapper {
+      p {
+        font-size: 34px;
+      }
+    }
+
+    .section {
+      padding: 40px ;
+      height: 100%;
+
+      .container {
+        max-width: 100%;
+
+        .cards {
+          grid-template-columns: repeat(1, 1fr);
+
+          .card {
+            max-width: 100%;
+          }
+        }
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 680px) {
   .sectionWrapper {
-    width: 100%;
+    .titleWrapper {
+
+      p {
+        font-size: 24px;
+      }
+    }
+
+    .section {
+      padding: 40px;
+
+      .container {
+        max-width: 100%;
+
+        .cards {
+          grid-row-gap: 30px;
+
+          .card {
+            max-width: 100%;
+
+            .title {
+              line-height: 19px;
+              margin: 24px 0 12px;
+            }
+          }
+        }
+      }
+    }
   }
 }

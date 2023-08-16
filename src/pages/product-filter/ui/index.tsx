@@ -5,8 +5,10 @@ import ImageOne from '@/shared/images/Image-product-filter.png';
 import { ReactComponent as IconArrow } from '@/shared/images/icon-arrow.svg';
 import { ReactComponent as IconRefresh } from '@/shared/images/icon-refresh.svg';
 import cl from 'classnames';
+import { useMediaQuery } from '@mantine/hooks';
 
 export const ProductFilter = () => {
+  const matches = useMediaQuery('(max-width: 680px)');
   return (
     <>
       <div className={style.sectionWrapper}>
@@ -194,7 +196,7 @@ export const ProductFilter = () => {
             </div>
 
             <Center mt={40}>
-              <Pagination total={10} className={style.pagination} />
+              <Pagination size={matches ? 'xs' : 'md'} total={10} className={style.pagination} />
             </Center>
           </div>
         </div>
