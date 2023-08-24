@@ -34,16 +34,16 @@ const routesView: RouteView[] = [
         path: routePaths.about,
         element: <About />,
       },
+      // {
+      //   path: routePaths.products,
+      //   element: <Products />,
+      // },
       {
-        path: routePaths.products,
-        element: <Products />,
-      },
-      {
-        path: routePaths.productsFilter,
+        path: `${routePaths.productsFilter}/:categoryId`,
         element: <ProductFilter />,
       },
       {
-        path: routePaths.productFilterInfo  ,
+        path: routePaths.productFilterInfo ,
         element: <ProductFilterInfo />,
       },
       {

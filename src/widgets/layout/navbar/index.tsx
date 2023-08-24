@@ -121,29 +121,29 @@ const Navbar: FC = () => {
             </p>
           </Anchor>
           <Anchor onClick={toggle}
-            className={cl(style.link, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+                  className={cl(style.link, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
             <p>
               Products
             </p>
           </Anchor>
-          <Collapse in={menuOpened} >
+          <Collapse in={menuOpened}>
             <Anchor
-              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
-              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}/1`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}/1` && style.active])}>
               <p>
                 PROCESS AND ENVIRONMENTAL MONITORING
               </p>
             </Anchor>
             <Anchor
-              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
-              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}/2`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}/2` && style.active])}>
               <p>
                 COMBUSTION AND SAFETY MONITORING
               </p>
             </Anchor>
             <Anchor
-              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
-              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}/3`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}/3` && style.active])}>
               <p>
                 TUNNEL AND TRAFFIC MONITORING
               </p>

@@ -36,13 +36,13 @@ export const ProductFilterInfo = () => {
             <div className={style.boxLeft}>
               <div className={style.imageBox}>
                 <div className={cl(style.imageWrapper, [data.new && style.new])}>
-                  <Image src={'../../../../' + data?.image || ''} alt={'Image'} width={'100%'} height={'100%'} />
+                  <Image src={data?.image} alt={'Image'} width={'100%'} height={'100%'} />
                   <ActionIcon className={style.fullscreen} onClick={open}>
                     <IconFullscreen />
                   </ActionIcon>
                 </div>
                 <div className={style.imagesWrapper}>
-                  <Image className={style.image} src={'../../../../' + data?.image || ''} alt={'img'} width={'139px'} />
+                  <Image className={style.image} src={data?.image} alt={'img'} width={'139px'} />
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export const ProductFilterInfo = () => {
         <ActionIcon onClick={close} className={style.closeBtn}>
           <IconClose />
         </ActionIcon>
-        <Image src={'../../../../' + data?.image || ''} alt={'Image'} width={'100%'} height={'100%'} />
+        <Image src={ data?.image} alt={'Image'} width={'100%'} height={'100%'} />
       </Modal>
     </>
   );
