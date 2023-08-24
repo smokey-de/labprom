@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import style from './index.module.scss';
-import { ActionIcon, Anchor, Drawer, Flex, Image, Input, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Anchor, Collapse, Drawer, Flex, Image, Input, Text, Tooltip } from '@mantine/core';
 import Logo from '@/shared/images/logo.png';
 import { ReactComponent as IconSearch } from '@/shared/images/search-icon.svg';
 import { ReactComponent as IconDots } from '@/shared/images/icon-dots.svg';
@@ -14,11 +14,12 @@ import { ReactComponent as IconFive } from '@/shared/images/icon-mail.svg';
 import cl from 'classnames';
 import { dataMenu } from '@/widgets/layout/navbar/libs';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { routePaths } from '@/shared/config/routing';
 
 const Navbar: FC = () => {
   const [search, setSearch] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [menuOpened, { toggle }] = useDisclosure(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -30,8 +31,8 @@ const Navbar: FC = () => {
           <Input placeholder={'Search...'} className={style.input}
                  onKeyPress={(event) => {
                    if (event.key === 'Enter') {
-                     setSearch(false)
-                      navigate(`/search-results?q=${(event.target as any).value}`);
+                     setSearch(false);
+                     navigate(`/search-results?q=${(event.target as any).value}`);
                    }
                  }}
                  rightSection={
@@ -98,14 +99,63 @@ const Navbar: FC = () => {
           </Tooltip>
         </Flex>
         <div className={style.menu}>
-          {dataMenu?.map((i, index) => <Anchor onClick={close} key={index}
-                                               component={Link} to={i?.path}
-                                               className={cl(style.link, [location.pathname === i?.path && style.active])}>
+          {/*{dataMenu?.map((i, index) => <Anchor onClick={close} key={index}*/}
+          {/*                                     component={Link} to={i?.path}*/}
+          {/*                                     className={cl(style.link, [location.pathname === i?.path && style.active])}>*/}
+          {/*  <p>*/}
+          {/*    {i?.label}*/}
+          {/*  </p>*/}
+          {/*</Anchor>)}*/}
+          <Anchor
+            onClick={close} component={Link} to={`${routePaths.root}`}
+            className={cl(style.link, [location.pathname === `${routePaths.root}` && style.active])}>
             <p>
-              {i?.label}
+              Home
             </p>
-          </Anchor>)}
-
+          </Anchor>
+          <Anchor
+            onClick={close} component={Link} to={`/${routePaths.about}`}
+            className={cl(style.link, [location.pathname === `/${routePaths.about}` && style.active])}>
+            <p>
+              About
+            </p>
+          </Anchor>
+          <Anchor onClick={toggle}
+            className={cl(style.link, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+            <p>
+              Products
+            </p>
+          </Anchor>
+          <Collapse in={menuOpened} >
+            <Anchor
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              <p>
+                PROCESS AND ENVIRONMENTAL MONITORING
+              </p>
+            </Anchor>
+            <Anchor
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              <p>
+                COMBUSTION AND SAFETY MONITORING
+              </p>
+            </Anchor>
+            <Anchor
+              onClick={close} component={Link} to={`/${routePaths.productsFilter}`}
+              className={cl(style.link, style.smallText, [location.pathname === `/${routePaths.productsFilter}` && style.active])}>
+              <p>
+                TUNNEL AND TRAFFIC MONITORING
+              </p>
+            </Anchor>
+          </Collapse>
+          <Anchor
+            onClick={close} component={Link} to={`/${routePaths.contact}`}
+            className={cl(style.link, [location.pathname === `/${routePaths.contact}` && style.active])}>
+            <p>
+              Contact
+            </p>
+          </Anchor>
         </div>
 
         <Flex className={style.drawerBottom}>
