@@ -6,7 +6,7 @@ import { ReactComponent as IconRefresh } from '@/shared/images/icon-refresh.svg'
 import cl from 'classnames';
 import { useMediaQuery } from '@mantine/hooks';
 import { useNavigate } from 'react-router-dom';
-import {data} from './libs'
+import { data, dataThree, dataTwo } from './libs';
 export const ProductFilter = () => {
   const navigate = useNavigate()
   const matches = useMediaQuery('(max-width: 680px)');

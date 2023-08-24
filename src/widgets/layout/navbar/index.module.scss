@@ -110,6 +110,12 @@
           text-decoration: underline;
         }
       }
+      &.smallText {
+        p {
+          padding-left: 24px;
+          font-size: 18px;
+        }
+      }
     }
   }
 
